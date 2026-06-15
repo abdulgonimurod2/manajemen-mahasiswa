@@ -1,0 +1,102 @@
+/* Light modern aesthetics */
+body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    color: #1e293b;
+    background-color: #f8fafc; /* Light subtle grey bg */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    letter-spacing: -0.5px;
+}
+
+/* Card aesthetics */
+.card {
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03) !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 420px;
+    border: 1px solid #e2e8f0 !important;
+}
+
+/* Custom Primary Color (Modern Indigo) */
+.text-primary { color: #4338ca !important; }
+.bg-primary { background-color: #4338ca !important; }
+.btn-primary { 
+    background-color: #4338ca; 
+    border-color: #4338ca; 
+}
+.btn-primary:hover {
+    background-color: #3730a3;
+    border-color: #3730a3;
+    box-shadow: 0 4px 12px rgba(67, 56, 202, 0.25);
+}
+
+/* Input Fields Refinements */
+.form-control, .form-select {
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    border-color: #cbd5e1;
+}
+.form-control:focus, .form-select:focus {
+    box-shadow: 0 0 0 0.25rem rgba(67, 56, 202, 0.15);
+    border-color: #818cf8;
+}
+
+/* Nav Aesthetics */
+.glass-nav {
+    background-color: #4338ca !important;
+    border-bottom: 1px solid #3730a3;
+}
+
+/* Dashboard Stats UI */
+.stat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04) !important;
+}
+.icon-circle {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Subtle colors */
+.bg-primary-subtle { background-color: #e0e7ff !important; }
+.bg-success-subtle { background-color: #dcfce7 !important; }
+.bg-warning-subtle { background-color: #fef3c7 !important; }
+.bg-info-subtle { background-color: #cffafe !important; }
+
+/* Table enhancements */
+.table>thead {
+    background-color: #f1f5f9;
+}
+.table>thead th {
+    font-weight: 600;
+    border-bottom-width: 1px;
+    border-top: none;
+    padding: 1rem 0.5rem;
+}
+.table>tbody td {
+    padding: 1rem 0.5rem;
+    vertical-align: middle;
+}
+.sortable {
+    cursor: pointer;
+    user-select: none;
+}
+.sortable:hover {
+    color: #4338ca !important;
+}
+
+/* Status Badges */
+.badge-status {
+    padding: 0.4em 0.8em;
+    border-radius: 6px;
+    font-weight: 500;
+}

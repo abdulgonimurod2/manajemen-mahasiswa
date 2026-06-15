@@ -1,0 +1,102 @@
+[
+    {
+        "nim": "2024110001",
+        "nama": "Zephyra Aldaine",
+        "jurusan": "Teknik Informatika",
+        "angkatan": 2024,
+        "ipk": 3.85,
+        "email": "zephyra.aldaine@student.ac.id",
+        "no_telp": "081234567890",
+        "status": "Aktif"
+    },
+    {
+        "nim": "2024110002",
+        "nama": "Corvyn Duskwell",
+        "jurusan": "Sistem Informasi",
+        "angkatan": 2024,
+        "ipk": 3.72,
+        "email": "corvyn.duskwell@student.ac.id",
+        "no_telp": "082345678901",
+        "status": "Aktif"
+    },
+    {
+        "nim": "2023110003",
+        "nama": "Isolde Marvyn",
+        "jurusan": "Teknik Komputer",
+        "angkatan": 2023,
+        "ipk": 3.45,
+        "email": "isolde.marvyn@student.ac.id",
+        "no_telp": "083456789012",
+        "status": "Aktif"
+    },
+    {
+        "nim": "2023110004",
+        "nama": "Theron Quillan",
+        "jurusan": "Teknik Informatika",
+        "angkatan": 2023,
+        "ipk": 3.90,
+        "email": "theron.quillan@student.ac.id",
+        "no_telp": "084567890123",
+        "status": "Aktif"
+    },
+    {
+        "nim": "2022110005",
+        "nama": "Vesper Cailwyn",
+        "jurusan": "Sistem Informasi",
+        "angkatan": 2022,
+        "ipk": 2.95,
+        "email": "vesper.cailwyn@student.ac.id",
+        "no_telp": "085678901234",
+        "status": "Cuti"
+    },
+    {
+        "nim": "2022110006",
+        "nama": "Elowen Draxford",
+        "jurusan": "Teknik Komputer",
+        "angkatan": 2022,
+        "ipk": 3.60,
+        "email": "elowen.draxford@student.ac.id",
+        "no_telp": "086789012345",
+        "status": "Aktif"
+    },
+    {
+        "nim": "2021110007",
+        "nama": "Caelum Wyndris",
+        "jurusan": "Teknik Informatika",
+        "angkatan": 2021,
+        "ipk": 3.20,
+        "email": "caelum.wyndris@student.ac.id",
+        "no_telp": "087890123456",
+        "status": "Aktif"
+    },
+    {
+        "nim": "2021110008",
+        "nama": "Lyria Stonveth",
+        "jurusan": "Sistem Informasi",
+        "angkatan": 2021,
+        "ipk": 3.78,
+        "email": "lyria.stonveth@student.ac.id",
+        "no_telp": "088901234567",
+        "status": "Aktif"
+    },
+    {
+        "nim": "2020110009",
+        "nama": "Ryndal Ashcroft",
+        "jurusan": "Teknik Komputer",
+        "angkatan": 2020,
+        "ipk": 3.10,
+        "email": "ryndal.ashcroft@student.ac.id",
+        "no_telp": "089012345678",
+        "status": "Lulus"
+    },
+    {
+        "nim": "2020110010",
+        "nama": "Sylvara Noctwyn",
+        "jurusan": "Teknik Informatika",
+        "angkatan": 2020,
+        "ipk": 3.35,
+        "email": "sylvara.noctwyn@student.ac.id",
+        "no_telp": "081123456789",
+        "status": "Lulus"
+    }
+]
