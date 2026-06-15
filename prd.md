@@ -125,7 +125,7 @@ manajemen-mahasiswa/
 ```json
 {
   "username": "admin",
-  "password": "Admin@2026",
+  "password": "Admin123",
   "nama_lengkap": "Administrator Sistem"
 }
 ```
