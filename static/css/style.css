@@ -2,10 +2,21 @@
 body {
     font-family: 'Inter', -apple-system, sans-serif;
     color: #1e293b;
-    background-color: #f8fafc; /* Light subtle grey bg */
+
+    background: linear-gradient(135deg,
+            #5a7df1 0%,
+            #2080e0 50%,
+            #1542d8 100%);
+
+    min-height: 100vh;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     letter-spacing: -0.5px;
 }
 
@@ -23,12 +34,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Custom Primary Color (Modern Indigo) */
-.text-primary { color: #4338ca !important; }
-.bg-primary { background-color: #4338ca !important; }
-.btn-primary { 
-    background-color: #4338ca; 
-    border-color: #4338ca; 
+.text-primary {
+    color: #4338ca !important;
 }
+
+.bg-primary {
+    background-color: #4338ca !important;
+}
+
+.btn-primary {
+    background-color: #4338ca;
+    border-color: #4338ca;
+}
+
 .btn-primary:hover {
     background-color: #3730a3;
     border-color: #3730a3;
@@ -36,12 +54,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Input Fields Refinements */
-.form-control, .form-select {
+.form-control,
+.form-select {
     padding: 0.6rem 1rem;
     border-radius: 8px;
     border-color: #cbd5e1;
 }
-.form-control:focus, .form-select:focus {
+
+.form-control:focus,
+.form-select:focus {
     box-shadow: 0 0 0 0.25rem rgba(67, 56, 202, 0.15);
     border-color: #818cf8;
 }
@@ -57,6 +78,7 @@ h1, h2, h3, h4, h5, h6 {
     transform: translateY(-4px);
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04) !important;
 }
+
 .icon-circle {
     width: 48px;
     height: 48px;
@@ -67,29 +89,44 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Subtle colors */
-.bg-primary-subtle { background-color: #e0e7ff !important; }
-.bg-success-subtle { background-color: #dcfce7 !important; }
-.bg-warning-subtle { background-color: #fef3c7 !important; }
-.bg-info-subtle { background-color: #cffafe !important; }
+.bg-primary-subtle {
+    background-color: #e0e7ff !important;
+}
+
+.bg-success-subtle {
+    background-color: #dcfce7 !important;
+}
+
+.bg-warning-subtle {
+    background-color: #fef3c7 !important;
+}
+
+.bg-info-subtle {
+    background-color: #cffafe !important;
+}
 
 /* Table enhancements */
 .table>thead {
     background-color: #f1f5f9;
 }
+
 .table>thead th {
     font-weight: 600;
     border-bottom-width: 1px;
     border-top: none;
     padding: 1rem 0.5rem;
 }
+
 .table>tbody td {
     padding: 1rem 0.5rem;
     vertical-align: middle;
 }
+
 .sortable {
     cursor: pointer;
     user-select: none;
 }
+
 .sortable:hover {
     color: #4338ca !important;
 }
