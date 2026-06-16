@@ -67,6 +67,7 @@ window.renderTable = function (data = dataMahasiswa) {
                 <td class="ps-4 text-muted">${start + idx + 1}</td>
                 <td class="fw-medium text-dark">${m.nim}</td>
                 <td class="fw-bold text-dark">${m.nama}</td>
+                <td class="fw-bold text-dark">${m.email}</td>
                 <td class="text-secondary">${m.jurusan}</td>
                 <td class="text-secondary">${m.angkatan}</td>
                 <td class="font-monospace fw-medium">${typeof m.ipk === 'number' ? m.ipk.toFixed(2) : parseFloat(m.ipk).toFixed(2)}</td>

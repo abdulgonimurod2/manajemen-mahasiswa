@@ -7,16 +7,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const loginAlert = document.getElementById("loginAlert");
 
+    // show alert
     function showAlert(message, type = "danger") {
         if (!loginAlert) return;
 
-        loginAlert.textContent = message;
-        loginAlert.classList.remove(
-            "d-none",
-            "alert-success",
-            "alert-danger"
-        );
-        loginAlert.classList.add(`alert-${type}`);
+        loginAlert.innerHTML = `
+            <div class="alert alert-${type} alert-dismissible fade show" role="alert">
+                <strong>${type === "success" ? "Berhasil!" : "Perhatian!"}</strong>
+                ${message}
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="alert"
+                    aria-label="Close">
+                </button>
+            </div>
+        `;
+
+        loginAlert.classList.remove("d-none");
     }
 
     const successMessage = sessionStorage.getItem("successMessage");
