@@ -95,6 +95,7 @@
                                 placeholder="Cari mahasiswa...">
                         </div>
                     </div>
+
                     <div class="col-md-2">
                         <select id="searchMethod" class="form-select form-select-sm bg-light">
                             <option value="linear">Linear Search</option>
@@ -117,6 +118,20 @@
                         <button class="btn btn-primary btn-sm fw-medium" id="btnAdd"><i class="bi bi-plus-lg me-1"></i>
                             Tambah Data</button>
                     </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="my-4">
+            <button class="btn btn-light border btn-sm text-muted fw-bold shadow-sm" type="button"
+                data-bs-toggle="collapse" data-bs-target="#complexityPanel">
+                <i class="bi bi-clock-history me-1"></i> Lihat Data Execution Terakhir
+            </button>
+            <div class="collapse show mt-2" id="complexityPanel">
+                <div class="card card-body shadow-sm border-0 bg-white small">
+                    <strong class="mb-2 text-dark">Informasi Waktu Eksekusi API:</strong>
+                    <span id="execInfo" class="text-primary font-monospace bg-light p-2 rounded border">Menunggu request
+                        API...</span>
                 </div>
             </div>
         </div>
@@ -168,20 +183,6 @@
                     <ul class="pagination pagination-sm mb-0" id="pagination">
                     </ul>
                 </nav>
-            </div>
-        </div>
-
-        <div class="mt-4">
-            <button class="btn btn-light border btn-sm text-muted fw-bold shadow-sm" type="button"
-                data-bs-toggle="collapse" data-bs-target="#complexityPanel">
-                <i class="bi bi-clock-history me-1"></i> Lihat Data Execution Terakhir
-            </button>
-            <div class="collapse mt-2" id="complexityPanel">
-                <div class="card card-body shadow-sm border-0 bg-white small">
-                    <strong class="mb-2 text-dark">Informasi Waktu Eksekusi API:</strong>
-                    <span id="execInfo" class="text-primary font-monospace bg-light p-2 rounded border">Menunggu request
-                        API...</span>
-                </div>
             </div>
         </div>
     </div>
