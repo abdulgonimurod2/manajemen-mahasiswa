@@ -65,8 +65,10 @@ def create_mahasiswa(req: MahasiswaModel):
         raise DuplicateNIMError("NIM sudah terdaftar dalam sistem")
         
     new_mhs = Mahasiswa.from_dict(data_dict)
-    data.append(new_mhs)
-    write_students_data(data)
+    
+    from api.services.database import supabase
+    supabase.table("students").insert(data_dict).execute()
+    
     return {"message": "Data mahasiswa berhasil ditambahkan", "data": new_mhs.to_dict()}
 
 @router.put("/{nim}")
@@ -75,25 +77,24 @@ def update_mahasiswa(nim: str, req: MahasiswaModel):
     validate_mahasiswa_data(data_dict)
     data = read_students_data()
     
-    found = False
-    for i, m in enumerate(data):
-        if m._nim == nim:
-            data[i] = Mahasiswa.from_dict(data_dict)
-            found = True
-            break
+    found = any(m._nim == nim for m in data)
             
     if not found:
         raise DataNotFoundError("Data mahasiswa tidak ditemukan")
         
-    write_students_data(data)
+    from api.services.database import supabase
+    supabase.table("students").update(data_dict).eq("nim", nim).execute()
+    
     return {"message": "Data mahasiswa berhasil diupdate"}
 
 @router.delete("/{nim}")
 def delete_mahasiswa(nim: str):
     data = read_students_data()
-    new_data = [m for m in data if m._nim != nim]
-    if len(data) == len(new_data):
+    found = any(m._nim == nim for m in data)
+    if not found:
         raise DataNotFoundError("Data mahasiswa tidak ditemukan")
         
-    write_students_data(new_data)
+    from api.services.database import supabase
+    supabase.table("students").delete().eq("nim", nim).execute()
+    
     return {"message": "Data mahasiswa berhasil dihapus"}
