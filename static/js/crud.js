@@ -9,6 +9,8 @@ document.addEventListener("DOMContentLoaded", () => {
         loadData();
 
         document.getElementById("btnSave").addEventListener("click", saveMahasiswa);
+        document.getElementById("btnExport").addEventListener("click", exportData);
+
         document.getElementById("btnAdd").addEventListener("click", () => {
             document.getElementById("formMode").value = "add";
             document.getElementById("formMahasiswa").reset();
@@ -19,6 +21,43 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+
+window.exportData = function () {
+    window.location.href = `${API_URL}/export/csv`;
+}
+
+window.handleImport = async function (event) {
+    const file = event.target.files[0];
+    if (!file) return;
+
+    // Custom button process indication
+    const btnImport = document.getElementById("btnImport");
+    const originalContent = btnImport.innerHTML;
+    btnImport.innerHTML = `<span class="spinner-border spinner-border-sm me-1" role="status" aria-hidden="true"></span>`;
+
+    const formData = new FormData();
+    formData.append("file", file);
+
+    try {
+        const res = await fetch(`${API_URL}/import/csv`, {
+            method: "POST",
+            body: formData
+        });
+        const json = await res.json();
+
+        if (res.ok) {
+            showToast("Berhasil Import", json.message, "success");
+            loadData();
+        } else {
+            showToast("Gagal Import", json.message || json.detail, "danger");
+        }
+    } catch (err) {
+        showToast("Error Import", err.message, "danger");
+    } finally {
+        btnImport.innerHTML = originalContent;
+        event.target.value = ""; // reset file input
+    }
+}
 
 async function loadData() {
     try {

@@ -114,7 +114,16 @@
                     <div class="col-md-1 d-grid">
                         <button class="btn btn-dark btn-sm fw-medium" id="btnSearch">Cari</button>
                     </div>
-                    <div class="col-md-3 text-end d-grid d-md-block">
+                    <div class="col-md-3 text-end d-grid d-md-block gap-2 d-md-flex justify-content-md-end">
+                        <button class="btn btn-outline-success btn-sm fw-medium" id="btnExport" title="Export ke CSV">
+                            <i class="bi bi-filetype-csv"></i> Export
+                        </button>
+                        <button class="btn btn-outline-success btn-sm fw-medium" id="btnImport" title="Import dari CSV"
+                            onclick="document.getElementById('fileImport').click()">
+                            <i class="bi bi-filetype-csv"></i> Import
+                        </button>
+                        <input type="file" id="fileImport" accept=".csv" style="display: none;"
+                            onchange="handleImport(event)">
                         <button class="btn btn-primary btn-sm fw-medium" id="btnAdd"><i class="bi bi-plus-lg me-1"></i>
                             Tambah Data</button>
                     </div>

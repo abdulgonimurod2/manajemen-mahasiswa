@@ -1,0 +1,32 @@
+[
+    {
+        "nim": "1002003001",
+        "nama": "Andi Firmansyah",
+        "jurusan": "Teknik Informatika",
+        "angkatan": 2022,
+        "ipk": 3.85,
+        "email": "andi.firmansyah@student.ac.id",
+        "no_telp": "081234567812",
+        "status": "Aktif"
+    },
+    {
+        "nim": "1002003002",
+        "nama": "Rina Gunawan",
+        "jurusan": "Sistem Informasi",
+        "angkatan": 2023,
+        "ipk": 3.65,
+        "email": "rina.gunawan@student.ac.id",
+        "no_telp": "081234567813",
+        "status": "Aktif"
+    },
+    {
+        "nim": "1002003003",
+        "nama": "Dimas Saputra",
+        "jurusan": "Teknik Komputer",
+        "angkatan": 2021,
+        "ipk": 3.25,
+        "email": "dimas.saputra@student.ac.id",
+        "no_telp": "081234567814",
+        "status": "Cuti"
+    }
+]

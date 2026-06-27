@@ -1,6 +1,9 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, UploadFile, File, Response
 from pydantic import BaseModel
 import time
+import json
+import csv
+import io
 
 from api.models.mahasiswa import Mahasiswa
 from api.services.file_service import read_students_data, write_students_data
@@ -20,6 +23,53 @@ class MahasiswaModel(BaseModel):
     email: str
     no_telp: str
     status: str
+
+@router.get("/export/csv")
+def export_mahasiswa_csv():
+    data = read_students_data()
+    dicts = [m.to_dict() for m in data]
+    
+    if not dicts:
+        return Response(content="", media_type="text/csv", headers={"Content-Disposition": "attachment; filename=students_export.csv"})
+        
+    output = io.StringIO()
+    writer = csv.DictWriter(output, fieldnames=dicts[0].keys())
+    writer.writeheader()
+    writer.writerows(dicts)
+    
+    return Response(
+        content=output.getvalue(), 
+        media_type="text/csv", 
+        headers={"Content-Disposition": "attachment; filename=students_export.csv"}
+    )
+
+@router.post("/import/csv")
+async def import_mahasiswa_csv(file: UploadFile = File(...)):
+    try:
+        content = await file.read()
+        decoded_content = content.decode('utf-8')
+        
+        csv_reader = csv.DictReader(io.StringIO(decoded_content))
+        data = [row for row in csv_reader]
+        
+        from api.services.database import supabase
+        berhasil = 0
+        for item in data:
+            try:
+                # Pastikan tipe data sesuai (terutama IPK - float, Angkatan - int)
+                item['ipk'] = float(item['ipk']) if 'ipk' in item else 0.0
+                item['angkatan'] = int(item['angkatan']) if 'angkatan' in item else 0
+                
+                # Menggunakan upsert agar tidak error jika NIM sudah ada
+                supabase.table("students").upsert(item).execute()
+                berhasil += 1
+            except Exception as e:
+                print(f"Gagal import data {item.get('nim')}: {e}")
+                
+        return {"message": f"{berhasil} data berhasil diimport dari file CSV"}
+    except Exception as e:
+        from fastapi import HTTPException
+        raise HTTPException(status_code=400, detail=f"Gagal memproses file CSV: {str(e)}")
 
 @router.get("/")
 def get_all_mahasiswa():
